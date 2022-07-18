@@ -4,18 +4,18 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
-df=pd.read_csv("DATA_SPLIT/val/anotations/tuberculosis-phone-0111.csv")
-img=cv2.imread("data/tuberculosis-phone-1011.jpg")
+df=pd.read_csv("DATA_SPLIT/train/anotations/tuberculosis-phone-1163.csv")
+img=cv2.imread("data/tuberculosis-phone-1163.jpg")
 
-img=np.array(img)
-print(img.shape)
+#img=np.array(img)
+#print(img.shape)
 
-#for coordinate in df.iterrows():
-#    cv2.rectangle(img, (int(coordinate[1][0].split(" ")[0]), int(coordinate[1][0].split(" ")[1])), (int(coordinate[1][0].split(" ")[2]), int(coordinate[1][0].split(" ")[3])), (0, 255, 0), 3, cv2.LINE_AA)
+for coordinate in df.iterrows():
+    cv2.rectangle(img, (int(coordinate[1][0].split(" ")[0]), int(coordinate[1][0].split(" ")[1])), (int(coordinate[1][0].split(" ")[2]), int(coordinate[1][0].split(" ")[3])), (0, 255, 0), 3, cv2.LINE_AA)
     
     
-#plt.imshow(img)
-#plt.show()
+plt.imshow(img)
+plt.show()
 
 
 # Histogram view
